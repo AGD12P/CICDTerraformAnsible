@@ -59,6 +59,8 @@ jobs:
 
       # Step 7: Run Ansible Playbook
       - name: Run Ansible Playbook
-        run: ansible-playbook -i Ansible/aws_ec2.yml Ansible/site.yml --private-key ~/.ssh/id_rsa 
+        run: |
+          export ANSIBLE_CONFIG=Ansible/ansible.cfg
+          ansible-playbook -i Ansible/aws_ec2.yml Ansible/site.yml --private-key ~/.ssh/id_rsa 
 
 
