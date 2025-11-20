@@ -38,7 +38,14 @@ jobs:
       - name: Set up Ansible
         run: sudo apt-get install -y ansible
 
-      # Step 6: Run Ansible Playbook
+      # Step 6: Set up SSH Private Key for Ansible
+      - name: Set up SSH Private Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      # Step 7: Run Ansible Playbook
       - name: Run Ansible Playbook
         run: ansible-playbook -i Ansible/aws_ec2.yml Ansible/site.yml
 
