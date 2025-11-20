@@ -1,4 +1,4 @@
 - hosts: role_alfec2
-  become: true
+  become: yes
   roles:
     - rol
