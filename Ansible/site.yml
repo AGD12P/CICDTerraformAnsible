@@ -1,0 +1,4 @@
+- hosts: role_alfec2
+  become: true
+  roles:
+    - rol
