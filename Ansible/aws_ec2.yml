@@ -10,4 +10,6 @@ compose:
   ansible_host: public-ip-address
 cache: false
 hostnames:
+  - private-ip-address
+  - instance-id
   - dns
