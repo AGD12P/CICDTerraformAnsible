@@ -9,5 +9,4 @@ filters:
 compose:
   ansible_host: public-ip-address
 cache: false
-hostnames:
-  - dns
+
