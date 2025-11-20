@@ -6,6 +6,9 @@ keyed_groups:
     prefix: role
 filters:
   instance-state-name: running
+hostnames:
+  - public-ip-address
+  - dns
 compose:
   ansible_host: public_ip_address
 vars:
