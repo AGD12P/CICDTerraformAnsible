@@ -53,7 +53,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # Step 7: Run Ansible Playbook
+      # Step 8: Run Ansible Playbook
       - name: Run Ansible Playbook
         run: |
           export ANSIBLE_CONFIG=Ansible/ansible.cfg
