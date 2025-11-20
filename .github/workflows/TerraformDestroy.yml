@@ -1,0 +1,27 @@
+name: TerraformDestroyRun
+
+on:
+  workflow_dispatch:
+
+jobs:
+  terraform-destroy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Terraform
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: '1.3.4' 
+
+      # Step 3: Terraform Init
+      - name: Terraform Init
+        run: cd Terraform && terraform init
+
+      # Step 4: Terraform Destroy (without manual approval)
+      - name: Terraform Destroy
+        run: cd Terraform && terraform destroy -auto-approve
