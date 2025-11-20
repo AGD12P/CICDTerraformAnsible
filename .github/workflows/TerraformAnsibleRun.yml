@@ -40,7 +40,7 @@ jobs:
 
       # Step 6: Install boto3 and botocore
       - name: Install boto3 and botocore
-        run: python3 -m pip install boto3 botocore
+        run: pip install boto3 botocore
 
       # Step 7: Set up SSH Private Key for Ansible
       - name: Set up SSH Private Key
